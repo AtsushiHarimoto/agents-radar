@@ -1,70 +1,150 @@
 {
   "zh": {
     "ai-cli": [
-      "Claude Code Beta v0.9.2 新增功能上线",
-      "OpenAI Codex v1.0 后停止支持",
-      "Gemini CLI Alpha v0.3.1 正在积极开发",
-      "GitHub Copilot CLI 出现112个开放问题",
-      "Qwen Code 在开源社区获得关注",
-      "Pi CLI 工具早期采用势头强劲"
+      "Claude Code 达 v2.1.251，问题量大",
+      "CLI 竞逐受控多智能体运行时",
+      "MCP/钩子、受限模式与成本遥测关键",
+      "Windows 完整性与子代理诚实仍滞后",
+      "Codex 24小时内 48 问题 50 PR",
+      "会话生命周期成主战场，胜过提示质量"
     ],
     "ai-agents": [
-      "OpenClaw v0.9.1 稳定版，含487个问题",
-      "Hermes Agent beta v0.8.4 发布",
-      "IronClaw 预发布版 v0.7.2 上线",
-      "QwenPaw 问题达512个，热门代理",
-      "ZeroClaw Labs 推出新隐私代理",
-      "OpenClaw 健康评分8.2（高）"
+      "OpenClaw：38.8万星，24h 148问题 500 PR",
+      "Betas v2026.8.1-beta.3 与 v2026.9.1-beta.1 落地",
+      "可靠性阶段：回复到不了用户",
+      "重启与鉴权后会话状态不同步",
+      "通道适配器丢回执或卡住通道",
+      "ClawSweeper 机器人几乎给每张票打标"
     ],
     "ai-infra": [
-      "SGLang 修复推测解码死锁",
-      "Blackwell SM100 NVFP4 内核进入开发",
-      "ROCm gfx1250 实验性支持加入",
-      "SGLang 扩展扩散模型支持",
-      "vLLM 稳定性改进持续进行",
-      "LiteLLM 增强多供应商路由"
+      "vLLM 0.28.0 与 SGLang 0.5.18 为稳定钉",
+      "Kimi-K3 与 DeepSeek-V4 是生产目标",
+      "GLM-5.3-Flash 与 Qwen3.8-Flash-Next 争 day-0",
+      "集群引擎交付融合核与 HiCache",
+      "推测解码在并发下仍不安全",
+      "GB10、Ada 4090 与 Strix Halo 是锐边"
+    ],
+    "ai-trending": [
+      "Agent Skills 成可移植一等产物",
+      "openai/codex 本周获 7775 星",
+      "freellmapi 路由 34 家免费源，+2691 星",
+      "官方 Anthropic 与 Cursor 技能目录走热",
+      "Apache Maka：本地优先、仅追加日志智能体",
+      "垂直智能体星数胜过通用聊天 UI"
     ],
     "ai-web": [
-      "Anthropic 发布模型硬件标准",
-      "MHS 实现 AI 控制实验设备",
-      "HHMI Janelia 合作宣布",
-      "AI 代理可自动化复杂流程",
-      "MHS 将设置时间从数周缩短至分钟",
-      "聚焦科学领域的可执行 AI 代理"
+      "Anthropic 预览 Model Hardware Standard (MHS)",
+      "MHS 让智能体控制实验室与工厂硬件",
+      "MHS 将部署时间从数周压到数分钟",
+      "HHMI Janelia 合作科学自动化",
+      "OpenAI 当日无新官方文章",
+      "MHS 统一各设备安全约束"
+    ],
+    "ai-hn": [
+      "传 OpenAI Jalapeño ASIC 能效超 Blackwell",
+      "Z.ai 将开源权重 Ox Alpha 作 GLM 系模型",
+      "讽刺 AI CEO 帖评论最重",
+      "Paul Graham 帖加剧自学造 LLM 焦虑",
+      "Debian 表决允许负责任 GenAI 使用",
+      "社区抵制仓库被 AI slop 淹没"
+    ],
+    "ai-arxiv": [
+      "CritICL 用小模型失败作批评信号",
+      "TTPO 无标签推理期获 RL 式增益",
+      "智能体从经验把技能编成 wiki",
+      "RLVR 后训练对抗熵崩塌",
+      "世界模型把视频当物理模拟器",
+      "开放预训练与可审计临床模型抬头"
+    ],
+    "ai-hf": [
+      "Qwen3.8-Flash-Next：125B 稀疏 MoE，262K 上下文",
+      "GLM-5.3-Flash：320B/18B 活跃，约 1M 上下文，1643赞",
+      "Qwen3.8-27B 仍是本地多模态主力",
+      "MiniMax-H3 与 LTX-2.5 视频生成点赞领先",
+      "Unsloth GGUF 与 MLX 移植拉动 Hub 流量",
+      "Abliterated Qwen3.8-27B 分叉走热本地聊天"
+    ],
+    "ai-community": [
+      "实地最佳模型对也最不可信",
+      "40 行 Go 过滤器把 LLM 账单砍 71%",
+      "Claude Code 配置在首提示前就烧 token",
+      "MCP readOnlyHint 实践中常未核验",
+      "开发者拒绝追每周最佳模型发布",
+      "Lobste.rs 框定动荡 vibe-coded 传闻时代"
     ]
   },
   "en": {
     "ai-cli": [
-      "Claude Code Beta v0.9.2 launched with new skills",
-      "OpenAI Codex deprecated after v1.0 release",
-      "Gemini CLI Alpha v0.3.1 now in active development",
-      "GitHub Copilot CLI hits 112 open issues",
-      "Qwen Code gains traction in open-source community",
-      "Pi CLI tool shows strong early adoption"
+      "Claude Code hits v2.1.251 with high issue volume",
+      "CLIs now compete on governed multi-agent runtimes",
+      "MCP/hooks, restricted modes, and cost telemetry matter",
+      "Windows completeness and subagent honesty still lag",
+      "Codex saw 48 issues and 50 PRs in 24 hours",
+      "Session lifecycle beats prompt quality as the battleground"
     ],
     "ai-agents": [
-      "OpenClaw v0.9.1 stable with 487 issues",
-      "Hermes Agent beta v0.8.4 released",
-      "IronClaw pre-release v0.7.2 now live",
-      "QwenPaw hits 512 issues, top trending agent",
-      "ZeroClaw Labs launches new privacy-focused agent",
-      "OpenClaw health score at 8.2 (high)"
+      "OpenClaw: 388k stars, 148 issues, 500 PRs in 24h",
+      "Betas v2026.8.1-beta.3 and v2026.9.1-beta.1 landed",
+      "Reliability phase: replies never reach the user",
+      "Session state desyncs across restart and auth",
+      "Channel adapters drop receipts or wedge lanes",
+      "ClawSweeper bot labels almost every incoming ticket"
     ],
     "ai-infra": [
-      "SGLang fixes speculative decoding deadlock",
-      "Blackwell SM100 NVFP4 kernels now in dev",
-      "ROCm gfx1250 support added experimentally",
-      "SGLang expands diffusion model support",
-      "vLLM stability improvements ongoing",
-      "LiteLLM enhances multi-provider routing"
+      "vLLM 0.28.0 and SGLang 0.5.18 are the stable pins",
+      "Kimi-K3 and DeepSeek-V4 are production targets",
+      "GLM-5.3-Flash and Qwen3.8-Flash-Next race day-0",
+      "Cluster engines ship fused kernels and HiCache",
+      "Speculative decode still unsafe under concurrency",
+      "GB10, Ada 4090, and Strix Halo are sharp edges"
+    ],
+    "ai-trending": [
+      "Agent Skills become a portable first-class artifact",
+      "openai/codex gained 7775 stars this week",
+      "freellmapi routes 34 free providers, +2691 stars",
+      "Official Anthropic and Cursor skill catalogs trend",
+      "Apache Maka: local-first agent with append-only log",
+      "Vertical agents beat generic chat UIs on stars"
     ],
     "ai-web": [
-      "Anthropic launches Model Hardware Standard",
-      "MHS enables AI control of lab instruments",
-      "HHMI Janelia collaboration announced",
-      "AI agents now automate complex workflows",
-      "MHS cuts setup time from weeks to minutes",
-      "Focus on executable AI agents for science"
+      "Anthropic previews Model Hardware Standard (MHS)",
+      "MHS lets agents control lab and factory hardware",
+      "Setup time drops from weeks to minutes with MHS",
+      "HHMI Janelia partners on scientific automation",
+      "OpenAI posted no new official articles this day",
+      "MHS standardizes safety constraints across devices"
+    ],
+    "ai-hn": [
+      "OpenAI Jalapeño ASIC said to beat Blackwell tokens/W",
+      "Z.ai will open-weight Ox Alpha as a GLM-series model",
+      "Satirical AI CEO thread drew the heaviest comments",
+      "Paul Graham post fuels learn-to-build-LLMs anxiety",
+      "Debian votes to allow responsible GenAI use",
+      "Community pushes back on AI slop flooding repos"
+    ],
+    "ai-arxiv": [
+      "CritICL uses small-model failures as critique signals",
+      "TTPO runs RL-style gains at inference without labels",
+      "Agents compile skills into wikis from experience",
+      "RLVR post-training fights entropy collapse",
+      "World models treat video as a physics simulator",
+      "Open pretraining and auditable clinical models rise"
+    ],
+    "ai-hf": [
+      "Qwen3.8-Flash-Next: 125B sparse MoE, 262K context",
+      "GLM-5.3-Flash: 320B/18B active, ~1M context, 1643 likes",
+      "Qwen3.8-27B remains the local multimodal workhorse",
+      "MiniMax-H3 and LTX-2.5 lead video generation likes",
+      "Unsloth GGUF and MLX ports drive Hub traffic",
+      "Abliterated Qwen3.8-27B forks trend for local chat"
+    ],
+    "ai-community": [
+      "Best field-test model pair was also least trustworthy",
+      "40-line Go filter cut an LLM bill by 71%",
+      "Claude Code configs burn tokens before first prompt",
+      "MCP readOnlyHint often goes unverified in practice",
+      "Devs refuse to chase weekly best-model releases",
+      "Lobste.rs frames a turbulent vibe-coded rumor era"
     ]
   }
 }

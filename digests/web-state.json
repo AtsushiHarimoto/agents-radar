@@ -1,6 +1,6 @@
 {
   "anthropic": {
-    "lastChecked": "2026-08-30T00:38:39.504Z",
+    "lastChecked": "2026-08-30T07:55:10.721Z",
     "seenUrls": {
       "https://www.anthropic.com/news/responsible-scaling-policy-v3": "2026-02-25T23:57:06.000Z",
       "https://www.anthropic.com/research/deprecation-updates-opus-3": "2026-02-25T20:58:11.000Z",
@@ -451,7 +451,7 @@
     }
   },
   "openai": {
-    "lastChecked": "2026-08-30T00:38:41.731Z",
+    "lastChecked": "2026-08-30T07:55:15.230Z",
     "seenUrls": {
       "https://openai.com/index/arvind-kc-chief-people-officer/": "2026-08-25T20:41:44.933Z",
       "https://openai.com/index/put-ai-to-work-for-your-product-team/": "2026-08-25T20:41:40.324Z",
@@ -638,7 +638,7 @@
       "https://openai.com/index/democratic-inputs-to-ai/": "2026-08-26T15:25:40.298Z",
       "https://openai.com/index/the-instruction-hierarchy/": "2026-06-01T19:21:42.845Z",
       "https://openai.com/index/improving-model-safety-behavior-with-rule-based-rewards/": "2026-08-26T15:25:37.005Z",
-      "https://openai.com/index/openai-o1-system-card/": "2026-08-19T00:21:16.227Z",
+      "https://openai.com/index/openai-o1-system-card/": "2026-08-30T07:51:42.580Z",
       "https://openai.com/index/advancing-red-teaming-with-people-and-ai/": "2026-08-19T00:21:18.277Z",
       "https://openai.com/index/trading-inference-time-compute-for-adversarial-robustness/": "2026-08-19T00:21:16.545Z",
       "https://openai.com/index/gdpval/": "2026-07-25T07:10:51.509Z",
@@ -661,7 +661,7 @@
       "https://openai.com/index/introducing-our-next-generation-audio-models/": "2026-08-21T00:28:00.727Z",
       "https://openai.com/index/introducing-the-teen-safety-blueprint/": "2026-08-14T13:51:57.619Z",
       "https://openai.com/index/openai-api/": "2026-08-14T20:27:41.247Z",
-      "https://openai.com/index/gpt-4o-system-card/": "2026-08-25T22:31:32.859Z",
+      "https://openai.com/index/gpt-4o-system-card/": "2026-08-30T07:53:47.531Z",
       "https://openai.com/index/gpt-4-research/": "2026-06-08T07:35:15.422Z",
       "https://openai.com/index/memory-and-new-controls-for-chatgpt/": "2026-07-25T07:03:11.458Z",
       "https://openai.com/index/introducing-the-codex-app/": "2026-08-20T03:24:04.581Z",
@@ -1016,7 +1016,7 @@
       "https://openai.com/index/consistency-models/": "2026-08-26T15:25:35.263Z",
       "https://openai.com/index/improved-techniques-for-training-consistency-models/": "2026-08-26T15:25:40.858Z",
       "https://openai.com/index/swe-lancer/": "2026-05-22T19:07:54.909Z",
-      "https://openai.com/index/emergent-misalignment/": "2026-07-25T07:09:02.350Z",
+      "https://openai.com/index/emergent-misalignment/": "2026-08-30T07:52:14.301Z",
       "https://openai.com/index/ai-clinical-copilot-penda-health/": "2026-08-17T22:02:12.468Z",
       "https://openai.com/index/collective-alignment-aug-2025-updates/": "2026-07-25T07:09:33.865Z",
       "https://openai.com/index/detecting-and-reducing-scheming-in-ai-models/": "2026-07-25T07:09:49.537Z",
@@ -1219,7 +1219,7 @@
       "https://openai.com/index/dali-rajic-chief-revenue-officer/": "2026-08-25T20:41:37.007Z",
       "https://openai.com/index/openai-joins-ports-pike-project/": "2026-08-25T12:16:43.834Z",
       "https://openai.com/index/partnering-with-codeai/": "2026-08-28T15:43:20.661Z",
-      "https://openai.com/index/pacing-model-development-cyber-capabilities/": "2026-08-26T15:25:30.631Z",
+      "https://openai.com/index/pacing-model-development-cyber-capabilities/": "2026-08-30T06:31:43.952Z",
       "https://openai.com/index/chatgpt-for-teens/": "2026-08-18T20:35:12.059Z",
       "https://openai.com/index/chatgpt-ads-expands-across-europe/": "2026-08-26T16:46:28.164Z",
       "https://openai.com/index/offering-zero-data-retention-for-frontier-models/": "2026-08-29T01:58:44.124Z",
