@@ -206,13 +206,13 @@ describe("buildInfraComparisonPrompt", () => {
 
   it("shows no-activity for empty digests", () => {
     const result = buildInfraComparisonPrompt([makeDigest({ summary: "Summary" })], "2026-03-09");
-    expect(result).toContain("过去24小时无活动");
+    expect(result).toContain("过去 7 天无活动");
   });
 
   it("generates English prompt", () => {
     const result = buildInfraComparisonPrompt([makeDigest()], "2026-03-09", "en");
     expect(result).toContain("Model Support Race");
-    expect(result).toContain("No activity in the last 24 hours.");
+    expect(result).toContain("No activity in the last 7 days.");
   });
 });
 
@@ -236,7 +236,7 @@ describe("buildComparisonPrompt", () => {
   it("shows no-activity for empty digests", () => {
     const digests = [makeDigest({ summary: "Summary" })]; // no issues/prs/releases
     const result = buildComparisonPrompt(digests, "2026-03-09");
-    expect(result).toContain("过去24小时无活动");
+    expect(result).toContain("过去 7 天无活动");
   });
 });
 
@@ -290,7 +290,7 @@ describe("buildTrendingPrompt", () => {
           fullName: "org/repo",
           description: "desc",
           language: "Python",
-          todayStars: 100,
+          periodStars: 100,
           totalStars: 5000,
           forks: 200,
           url: "https://github.com/org/repo",
@@ -303,7 +303,7 @@ describe("buildTrendingPrompt", () => {
     expect(result).toContain("org/repo");
     expect(result).toContain("Python");
     expect(result).toContain("5,000");
-    expect(result).toContain("+100 today");
+    expect(result).toContain("+100 this week");
   });
 
   it("shows fetch failure message when trending fails", () => {

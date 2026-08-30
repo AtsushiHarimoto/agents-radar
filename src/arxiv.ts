@@ -2,8 +2,10 @@
  * ArXiv AI papers fetched via the ArXiv API (Atom feed).
  *
  * Strategy: query cs.AI + cs.CL + cs.LG categories for the newest papers,
- * sorted by submission date, filtered to last 48h.
+ * sorted by submission date, filtered to the lookback window (at least 48h).
  */
+
+import { getLookbackMs } from "./window.ts";
 
 // ---------------------------------------------------------------------------
 // Types
@@ -145,8 +147,8 @@ export async function fetchArxivData(): Promise<ArxivData> {
     }
   }
 
-  // Filter to last 48h (ArXiv has a ~1-day publishing delay, so 24h would miss today's batch)
-  const cutoff = Date.now() - 48 * 60 * 60 * 1000;
+  // 窗口取 max(回溯窗口, 48h)：ArXiv 有 ~1 天發佈延遲，小於 48h 會漏掉當天那批。
+  const cutoff = Date.now() - Math.max(getLookbackMs(), 48 * 60 * 60 * 1000);
   const papers = [...seen.values()]
     .filter((p) => new Date(p.published).getTime() > cutoff)
     .sort((a, b) => new Date(b.published).getTime() - new Date(a.published).getTime())

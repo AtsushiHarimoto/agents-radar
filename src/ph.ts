@@ -5,6 +5,8 @@
  * then filter locally for AI-related topics.
  */
 
+import { getLookbackMs } from "./window.ts";
+
 // ---------------------------------------------------------------------------
 // Types
 // ---------------------------------------------------------------------------
@@ -111,10 +113,11 @@ export async function fetchPhData(): Promise<PhData> {
     return { products: [], fetchSuccess: false };
   }
 
-  // Fetch yesterday's products (they've had a full day to accumulate votes)
+  // 窗口 = [now - lookback, now - 24h]：上界仍留 24 小時，讓產品有一整天累積票數；
+  // 下界改吃回溯窗口，否則週報的 PH 那段只有一天的產品。
   const now = new Date();
-  const yesterday = new Date(now.getTime() - 24 * 60 * 60 * 1000);
-  const twoDaysAgo = new Date(now.getTime() - 48 * 60 * 60 * 1000);
+  const windowEnd = new Date(now.getTime() - 24 * 60 * 60 * 1000);
+  const windowStart = new Date(now.getTime() - Math.max(getLookbackMs(), 48 * 60 * 60 * 1000));
 
   try {
     const resp = await fetch(API_URL, {
@@ -128,8 +131,8 @@ export async function fetchPhData(): Promise<PhData> {
         query: POSTS_QUERY,
         variables: {
           first: PH_FETCH_COUNT,
-          postedAfter: twoDaysAgo.toISOString(),
-          postedBefore: yesterday.toISOString(),
+          postedAfter: windowStart.toISOString(),
+          postedBefore: windowEnd.toISOString(),
         },
       }),
     });

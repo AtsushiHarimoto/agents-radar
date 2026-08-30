@@ -2,6 +2,8 @@
  * Lobste.rs AI stories fetched via tag-based JSON endpoints (e.g., /t/ai.json).
  */
 
+import { getLookbackMs } from "./window.ts";
+
 // ---------------------------------------------------------------------------
 // Types
 // ---------------------------------------------------------------------------
@@ -88,10 +90,10 @@ export async function fetchLobstersData(): Promise<LobstersData> {
       }),
     );
 
-    // Filter to last 7 days (Lobste.rs AI/ML tag volume is low)
-    const sevenDaysAgo = Date.now() - 7 * 24 * 60 * 60 * 1000;
+    // 窗口取 max(回溯窗口, 7 天)：Lobste.rs 的 AI/ML tag 量本來就低，窗口再縮會空。
+    const cutoff = Date.now() - Math.max(getLookbackMs(), 7 * 24 * 60 * 60 * 1000);
     const stories = [...seen.values()]
-      .filter((s) => new Date(s.publishedAt).getTime() > sevenDaysAgo)
+      .filter((s) => new Date(s.publishedAt).getTime() > cutoff)
       .sort((a, b) => b.score - a.score)
       .slice(0, LOBSTERS_TOP);
 

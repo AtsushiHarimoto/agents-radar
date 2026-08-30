@@ -44,7 +44,7 @@ describe("buildCliReportContent", () => {
       "zh",
     );
 
-    expect(result).toContain("# AI CLI 工具社区动态日报 2026-03-09");
+    expect(result).toContain("# AI CLI 工具社区动态周报 2026-03-09");
     expect(result).toContain("覆盖工具: 2 个");
     expect(result).toContain("[Claude Code](https://github.com/anthropics/claude-code)");
     expect(result).toContain("[Claude Code Skills](https://github.com/anthropics/skills)");
@@ -125,7 +125,7 @@ describe("buildOpenclawReportContent", () => {
       "zh",
     );
 
-    expect(result).toContain("# OpenClaw 生态日报 2026-03-09");
+    expect(result).toContain("# OpenClaw 生态周报 2026-03-09");
     expect(result).toContain("Issues: 1");
     expect(result).toContain("覆盖项目: 2 个");
     expect(result).toContain("[OpenClaw](https://github.com/openclaw/openclaw)");
@@ -175,7 +175,7 @@ describe("buildInfraReportContent", () => {
       "zh",
     );
 
-    expect(result).toContain("# AI 基础设施日报 2026-03-09");
+    expect(result).toContain("# AI 基础设施周报 2026-03-09");
     expect(result).toContain("覆盖项目: 2 个");
     expect(result).toContain("[vLLM](https://github.com/vllm-project/vllm)");
     expect(result).toContain("[Ollama](https://github.com/ollama/ollama)");

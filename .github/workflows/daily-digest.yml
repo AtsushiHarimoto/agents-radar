@@ -1,7 +1,14 @@
 name: Daily Agents Radar
 
+# moyin fork：排程已停用。這份 digest 改由本機 Linux 的 systemd timer 每週跑一次
+# （見 tools/agents-radar-weekly/），LLM 走本機 gateway，不消耗雲端 API 額度。
+# 保留 workflow_dispatch 當逃生門：本機掛掉時仍可在 GitHub 上手動跑一次。
+# 原上游排程設定保留在下方註解裡，之後要跟上游 merge 時比對用。
+#
+# on:
+#   schedule:
 on:
-  schedule:
+  # schedule:
     # 22:37 UTC daily = 06:37 CST (UTC+8) the next day. A ~20 min run started
     # then lands the digest around 07:00 CST, which is when it is expected.
     #
@@ -11,7 +18,7 @@ on:
     # was dispatched 5h07m late and the 08-27 run was never created at all.
     # qwen-flash has flat pricing, so moving the slot costs nothing (it would
     # have, under DeepSeek's peak/off-peak scheme).
-    - cron: "37 22 * * *"
+    # - cron: "37 22 * * *"
   workflow_dispatch:
 
 permissions:

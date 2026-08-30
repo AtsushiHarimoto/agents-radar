@@ -66,6 +66,7 @@ import { fetchDevtoData, type DevtoData } from "./devto.ts";
 import { fetchLobstersData, type LobstersData } from "./lobsters.ts";
 import { loadConfig } from "./config.ts";
 import { toCstDateStr, toUtcStr, weekdayOf } from "./date.ts";
+import { getLookbackDays, getSinceDate } from "./window.ts";
 import {
   type Lang,
   MSG,
@@ -392,15 +393,18 @@ async function main(): Promise<void> {
   requireEnv("GITHUB_TOKEN");
 
   const now = new Date();
-  const since = new Date(now.getTime() - 24 * 60 * 60 * 1000);
+  const since = getSinceDate(now);
   const dateStr = toCstDateStr(now);
   const utcStr = toUtcStr(now);
   const digestRepo = process.env["DIGEST_REPO"] ?? "";
 
   const providerName = process.env["LLM_PROVIDER"] ?? "anthropic";
-  const isHfWeek = weekdayOf(dateStr) === HF_REPORT_WEEKDAY;
+  // moyin fork：跑週報時每次都該出 HF 報告（本來的星期一 gate 是為了讓日報一週只出一次；
+  // 窗口已經是一週，再套 gate 會變成「只有跑在星期一的那次才有 HF」）。
+  const lookbackDays = getLookbackDays();
+  const isHfWeek = lookbackDays >= 7 || weekdayOf(dateStr) === HF_REPORT_WEEKDAY;
   console.log(
-    `[${now.toISOString()}] Starting digest | provider: ${providerName} | HF weekly: ${isHfWeek ? "yes" : "no"}`,
+    `[${now.toISOString()}] Starting digest | provider: ${providerName} | lookback: ${lookbackDays}d | HF: ${isHfWeek ? "yes" : "no"}`,
   );
 
   // 1. Fetch all data in parallel

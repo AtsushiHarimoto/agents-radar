@@ -2,6 +2,8 @@
  * GitHub trending and AI topic search data fetching.
  */
 
+import { getLookbackDays, getSinceDate } from "./window.ts";
+
 // ---------------------------------------------------------------------------
 // Types
 // ---------------------------------------------------------------------------
@@ -10,7 +12,8 @@ export interface TrendingRepo {
   fullName: string;
   description: string;
   language: string;
-  todayStars: number;
+  /** 該榜單週期內新增的 star 數（daily 榜是「今天」，weekly 榜是「本週」）。 */
+  periodStars: number;
   totalStars: number;
   forks: number;
   url: string;
@@ -49,9 +52,17 @@ const SEARCH_QUERIES = [
 // GitHub Trending HTML fetch
 // ---------------------------------------------------------------------------
 
-async function fetchGitHubTrending(): Promise<{ repos: TrendingRepo[]; success: boolean }> {
+/**
+ * 抓 GitHub Trending 榜。
+ *
+ * @param range 榜單週期，對應 `github.com/trending?since=`。回溯窗口 ≥7 天時用 weekly，
+ *   否則 daily —— 用 daily 榜做週報等於只看跑那一天的榜，一週的趨勢會整個看不到。
+ */
+async function fetchGitHubTrending(
+  range: "daily" | "weekly",
+): Promise<{ repos: TrendingRepo[]; success: boolean }> {
   try {
-    const resp = await fetch("https://github.com/trending?since=daily&spoken_language_code=", {
+    const resp = await fetch(`https://github.com/trending?since=${range}&spoken_language_code=`, {
       headers: {
         "User-Agent": "Mozilla/5.0 (compatible; agents-radar/1.0)",
         Accept: "text/html",
@@ -85,9 +96,10 @@ async function fetchGitHubTrending(): Promise<{ repos: TrendingRepo[]; success: 
         const langMatch = block.match(/<span[^>]+itemprop="programmingLanguage"[^>]*>([\s\S]*?)<\/span>/);
         const language = langMatch?.[1] ? langMatch[1].replace(/<[^>]+>/g, "").trim() : "";
 
-        // today stars
-        const todayMatch = block.match(/([\d,]+)\s+stars?\s+today/i);
-        const todayStars = todayMatch?.[1] ? parseInt(todayMatch[1].replace(/,/g, ""), 10) : 0;
+        // 週期內新增 star：daily 榜寫「stars today」，weekly 榜寫「stars this week」。
+        // 只認 today 的話切到 weekly 榜會全部解析成 0，且不會報錯。
+        const periodMatch = block.match(/([\d,]+)\s+stars?\s+(?:today|this week|this month)/i);
+        const periodStars = periodMatch?.[1] ? parseInt(periodMatch[1].replace(/,/g, ""), 10) : 0;
 
         // total stars — look for link with /stargazers
         const totalMatch = block.match(/href="\/[^"]+\/stargazers"[^>]*>\s*<[^>]+>\s*([\d,]+)/);
@@ -101,7 +113,7 @@ async function fetchGitHubTrending(): Promise<{ repos: TrendingRepo[]; success: 
           fullName,
           description,
           language,
-          todayStars,
+          periodStars,
           totalStars,
           forks,
           url: `https://github.com/${fullName}`,
@@ -194,11 +206,12 @@ async function searchAiRepos(sevenDaysAgo: string): Promise<SearchRepo[]> {
 // ---------------------------------------------------------------------------
 
 export async function fetchTrendingData(): Promise<TrendingData> {
-  const sevenDaysAgo = new Date(Date.now() - 7 * 24 * 60 * 60 * 1000).toISOString().slice(0, 10);
+  const pushedSince = getSinceDate().toISOString().slice(0, 10);
+  const range = getLookbackDays() >= 7 ? "weekly" : "daily";
 
   const [{ repos: trendingRepos, success }, searchRepos] = await Promise.all([
-    fetchGitHubTrending(),
-    searchAiRepos(sevenDaysAgo),
+    fetchGitHubTrending(range),
+    searchAiRepos(pushedSince),
   ]);
 
   return { trendingRepos, searchRepos, trendingFetchSuccess: success };
