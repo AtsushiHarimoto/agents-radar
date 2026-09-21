@@ -1,0 +1,134 @@
+{
+  "zh": {
+    "ai-cli": [
+      "CLI 成为多端智能体运行时",
+      "Claude Code 本周发布 2.1.265–270",
+      "Codex 达到 0.155.0-alpha.3.x",
+      "Copilot CLI 1.0.84-x；Qwen Code 0.23.3",
+      "OpenCode 1.18.30 及早期 v2 标签",
+      "焦点：会话完整性与 MCP 生命周期"
+    ],
+    "ai-agents": [
+      "OpenClaw：一日 97 议题与 500 PR",
+      "已合并 263 个 PR；仍开放 237",
+      "更安全更新与 9.2→9.4 故障冲突",
+      "npm 全局与 Windows 任务交接缺陷",
+      "子代理路由与 MCP OAuth 安全工作",
+      "OpenClaw 约 39 万星，自托管助手"
+    ],
+    "ai-infra": [
+      "模型周：DeepSeek-V4.1 与 Kimi-K3",
+      "Qwen3.8、Gemma 4、GLM-5.2 同步落地",
+      "SGLang 提供明确 V4.1 预览路径",
+      "vLLM v0.29.0 及 v0.29.1rc0",
+      "工具调用正确性成为运维税",
+      "锁定稳定版；预览不可互换"
+    ],
+    "ai-trending": [
+      "Agent-skills 仓库吸纳最多新星标",
+      "ayghri/i-have-adhd 暴增 +15,924 星",
+      "affaan-m/ECC +8,086；ponytail +9,272",
+      "tt-a1i/archify 攀升 +10,442 星",
+      "openai/skills 成为 Codex 分发渠道",
+      "gods-eye-view +10,510 空间智能"
+    ],
+    "ai-hn": [
+      "菲尔兹奖得主警示 AI 数学错位",
+      "陶哲轩：开放问题被不可再生挖掘",
+      "OpenAI 被指抢跑未发表成果",
+      "评估代理曾淹没 RubyGems",
+      "Meta 面向消费者推出 Muse 代理",
+      "HN 疲劳：没有 AI 克隆的黑客新闻"
+    ],
+    "ai-arxiv": [
+      "MoE 对重复数据更易过拟合",
+      "训练后量化保持稳定",
+      "ORCH：经结构实现集体智能",
+      "Ecdysis 训练智能体运行时套件",
+      "GPU-CFR 宣称约 80 倍 CFR 加速",
+      "控制论式人工身份对齐"
+    ],
+    "ai-hf": [
+      "DeepSeek-V4.1-Flash：552B 多模态 MoE",
+      "Qwen3.8-27B 与 Flash-Next 点赞领先",
+      "MiniMax-H3 原生立体视频加音频",
+      "YuE2-3B 歌词成曲声称超越 Suno",
+      "MiniCPM5-2B 端侧 128K 上下文",
+      "Unsloth GGUF 包达数百万下载"
+    ],
+    "ai-community": [
+      "Vibe coding 非工程；视为草稿",
+      "双 AI 审查仍漏过人工级缺陷",
+      "LLM RAG 编目可能损害检索",
+      "OpenAI 代理据称淹没 RubyGems",
+      "Amodei 在 Lobsters 谈前沿节奏",
+      "Claude 越狱用于疑似国家相关行动"
+    ]
+  },
+  "en": {
+    "ai-cli": [
+      "CLIs become multi-surface agent runtimes",
+      "Claude Code ships 2.1.265–270 this week",
+      "Codex hits 0.155.0-alpha.3.x",
+      "Copilot CLI 1.0.84-x; Qwen Code 0.23.3",
+      "OpenCode 1.18.30 plus early v2 tags",
+      "Fight: session integrity and MCP lifecycle"
+    ],
+    "ai-agents": [
+      "OpenClaw: 97 issues and 500 PRs in one day",
+      "263 PRs merged; 237 still open",
+      "Safer updates clash with 9.2→9.4 failures",
+      "npm global and Windows Task handoff bugs",
+      "Subagent routing and MCP OAuth safety work",
+      "OpenClaw ~390k stars, self-hosted assistant"
+    ],
+    "ai-infra": [
+      "Model week: DeepSeek-V4.1 and Kimi-K3",
+      "Qwen3.8, Gemma 4, GLM-5.2 also landing",
+      "SGLang ships explicit V4.1 preview path",
+      "vLLM v0.29.0 plus v0.29.1rc0",
+      "Tool-calling correctness is the ops tax",
+      "Pin stables; treat previews as non-swap"
+    ],
+    "ai-trending": [
+      "Agent-skills repos absorb most new stars",
+      "ayghri/i-have-adhd surges +15,924 stars",
+      "affaan-m/ECC +8,086; ponytail +9,272",
+      "tt-a1i/archify climbs +10,442 stars",
+      "openai/skills becomes Codex distribution",
+      "gods-eye-view +10,510 spatial intelligence"
+    ],
+    "ai-hn": [
+      "Fields Medalists warn AI math misalignment",
+      "Tao: open problems mined non-renewably",
+      "OpenAI accused of racing unpublished work",
+      "Eval agents previously flooded RubyGems",
+      "Meta consumer-launches Muse agent",
+      "HN fatigue: Hacker News without AI clones"
+    ],
+    "ai-arxiv": [
+      "MoEs overfit more to repeated data",
+      "Post-training quantization stays stable",
+      "ORCH: collective intelligence via structure",
+      "Ecdysis trains agent runtime harnesses",
+      "GPU-CFR claims ~80× CFR speedup",
+      "Control-theoretic Artificial Id alignment"
+    ],
+    "ai-hf": [
+      "DeepSeek-V4.1-Flash: 552B MoE multimodal",
+      "Qwen3.8-27B and Flash-Next lead likes",
+      "MiniMax-H3 native stereo video plus audio",
+      "YuE2-3B lyrics-to-song claims Suno beat",
+      "MiniCPM5-2B on-device 128K context",
+      "Unsloth GGUF packs hit multi-million DLs"
+    ],
+    "ai-community": [
+      "Vibe coding isn’t engineering; treat as draft",
+      "Two AIs reviewing still miss human bugs",
+      "LLM RAG cataloguing can hurt retrieval",
+      "OpenAI agents allegedly flooded RubyGems",
+      "Amodei pace-the-frontier essay on Lobsters",
+      "Claude jailbreak used in state-linked campaign"
+    ]
+  }
+}

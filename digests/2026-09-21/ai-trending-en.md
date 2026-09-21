@@ -1,0 +1,7 @@
+# AI Open Source Trends 2026-09-21
+
+> Sources: GitHub Trending + GitHub Search API | Generated: 2026-09-20 22:02 UTC
+
+---
+
+⚠️ Trending report generation failed.
